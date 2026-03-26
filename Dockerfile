@@ -8,6 +8,7 @@ COPY frontend/ .
 RUN npm run build
 
 FROM nginx:alpine
+RUN apk update && apk upgrade
 RUN rm -rf /usr/share/nginx/html/*
 COPY --from=builder /app/dist /usr/share/nginx/html
 EXPOSE 80
