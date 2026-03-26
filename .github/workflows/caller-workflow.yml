@@ -19,9 +19,9 @@ jobs:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
-  tag-production:
+  tag-prod:
     if: ${{ github.ref_name == 'main' }}
-    uses: amandhal/workflow-repository/.github/workflows/docker-ci.yml.yml@v1
+    uses: amandhal/workflow-repository/.github/workflows/docker-ci.yml@v1
     with:
       image_name: frontend
       source_tag: latest
