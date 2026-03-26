@@ -1,4 +1,4 @@
-name: Tag Docker Image on Push using shared workflow
+name: Tag Docker Image on Push using github shared workflow
 
 on:
   push:
@@ -7,7 +7,6 @@ on:
       - main
 
 jobs:
-
   tag-staging:
     if: ${{ github.ref_name == 'develop' }}
     uses: amandhal/workflow-repository/.github/workflows/docker-ci.yml@v1
