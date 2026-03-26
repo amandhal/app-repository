@@ -9,7 +9,7 @@ on:
 jobs:
   tag-staging:
     if: ${{ github.ref_name == 'develop' }}
-    uses: amandhal/workflow-repository/.github/workflows/docker-ci.yml@v1.0.0
+    uses: amandhal/workflow-repository/.github/workflows/docker-ci.yml@main
     with:
       image_name: frontend
       source_tag: latest
@@ -21,7 +21,7 @@ jobs:
 
   tag-prod:
     if: ${{ github.ref_name == 'main' }}
-    uses: amandhal/workflow-repository/.github/workflows/docker-ci.yml@v1.0.0
+    uses: amandhal/workflow-repository/.github/workflows/docker-ci.yml@main
     with:
       image_name: frontend
       source_tag: latest
