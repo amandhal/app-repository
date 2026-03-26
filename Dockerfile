@@ -1,4 +1,6 @@
 FROM node:20-alpine AS builder
+RUN apk add --no-cache \
+    && apk upgrade --no-cache
 WORKDIR /app
 COPY frontend/package*.json ./
 RUN npm ci
