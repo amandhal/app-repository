@@ -1,0 +1,17 @@
+node_modules
+frontend/node_modules
+
+frontend/dist
+
+.git
+.gitignore
+
+# Logs
+*.log
+
+.env
+.env.*
+
+# OS junk
+.DS_Store
+
