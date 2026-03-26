@@ -20,7 +20,7 @@ jobs:
 
   tag-prod:
     if: ${{ github.ref_name == 'main' }}
-    uses: amandhal/workflow-repository/.github/workflows/docker-ci.yml@v1
+    uses: amandhal/workflow-repository/.github/workflows/docker-ci.yml@v1.0.0
     with:
       image_name: frontend
       source_tag: latest
