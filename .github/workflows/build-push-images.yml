@@ -36,5 +36,5 @@ jobs:
           
       - name: Remove Local Image
         run: |
-          docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY }}:latest
-          docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
+          docker rmi ${{ secrets.DOCKER_USERNAME }}/${{ env.REPOSITORY }}:latest
+          docker rmi ${{ secrets.DOCKER_USERNAME }}/${{ env.REPOSITORY }}:${{ env.IMAGE_TAG }}
