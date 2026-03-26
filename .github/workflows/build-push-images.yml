@@ -31,8 +31,8 @@ jobs:
         with:
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.REPOSITORY }}:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/$REPOSITORY:$IMAGE_TAG
+            ${{ secrets.DOCKER_USERNAME }}/${{ env.REPOSITORY }}:latest
+            ${{ secrets.DOCKER_USERNAME }}/$REPOSITORY:$IMAGE_TAG
           
       - name: Remove Local Image
         run: |
