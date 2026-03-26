@@ -1,0 +1,31 @@
+name: Tag Docker Image on Push using shared workflow
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+
+  tag-staging:
+    if: ${{ github.ref_name == 'develop' }}
+    uses: amandhal/workflow-repository/.github/workflows/docker-ci.yml.yml@v1
+    with:
+      image_name: frontend
+      source_tag: latest
+      target_tag: staging-${{ github.sha }}
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+  tag-production:
+    if: ${{ github.ref_name == 'main' }}
+    uses: amandhal/workflow-repository/.github/workflows/docker-ci.yml.yml@v1
+    with:
+      image_name: frontend
+      source_tag: latest
+      target_tag: prod-${{ github.run_number }}
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
